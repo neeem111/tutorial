@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { GameEdit } from '../game-edit/game-edit';
+import { GameEditComponent } from '../game-edit/game-edit';
 import { GameService } from '../game.service';
 import { Game } from '../model/Game';
 import { CategoryService } from '../../category/category.service';
@@ -69,7 +69,7 @@ export class GameListComponent implements OnInit {
     }
 
     createGame() {
-        const dialogRef = this.dialog.open(GameEdit, {
+        const dialogRef = this.dialog.open(GameEditComponent, {
             data: {},
         });
 
@@ -79,7 +79,7 @@ export class GameListComponent implements OnInit {
     }
 
     editGame(game: Game) {
-        const dialogRef = this.dialog.open(GameEdit, {
+        const dialogRef = this.dialog.open(GameEditComponent, {
             data: { game: game },
         });
 

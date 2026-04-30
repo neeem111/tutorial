@@ -1,0 +1,45 @@
+<div class="container">
+  @if (cliente.id) {
+    <h1>Modificar cliente</h1>
+  } @else {
+    <h1>Crear cliente</h1>
+  }
+
+  <form>
+    <mat-form-field>
+      <mat-label>Identificador</mat-label>
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="cliente.id"
+        name="id"
+        disabled
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Nombre del cliente"
+        [(ngModel)]="cliente.name"
+        name="name"
+        required
+        (ngModelChange)="error = false"
+      />
+    </mat-form-field>
+    
+<div class="backend-error" *ngIf="error">
+  Ya existe un cliente con ese nombre
+</div>
+
+  </form>
+
+  <div class="buttons">
+    <button mat-stroked-button (click)="onClose()">Cerrar</button>
+    <button mat-flat-button color="primary" (click)="onSave()">
+      Guardar
+    </button>
+  </div>
+</div>

@@ -9,6 +9,7 @@ export const routes: Routes = [
       import('./category/category-list/category-list').then((m) => m.CategoryListComponent),
   },    
   { path: 'authors', loadComponent: () => import('./author/author-list/author-list').then(m => m.AuthorListComponent)},
-    { path: 'games', loadComponent: () => import('./game/game-list/game-list').then(m => m.GameListComponent)}
+  { path: 'games', loadComponent: () => import('./game/game-list/game-list').then(m => m.GameListComponent)},
+  { path: 'clientes', loadComponent: () => import('./clientes/clientes-lista/clientes-lista').then(m => m.ClientesListComponent)},
 
 ];
