@@ -1,4 +1,4 @@
-import { Prestamo } from "./prestamo";
+import { Prestamo } from "./Prestamo";
 import { Pageable } from "../../core/model/page/Pageable";
 
 export class PrestamoPage {
