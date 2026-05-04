@@ -1,4 +1,4 @@
-import { Prestamo } from "./prestamo";
+import { Prestamo } from "./Prestamo";
 
 export const PRESTAMO_DATA: Prestamo[] = [
   {

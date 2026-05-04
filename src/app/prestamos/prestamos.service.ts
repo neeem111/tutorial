@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Loan } from './model/Loan';
-import { LoanPage } from './model/LoanPage';
+import { Prestamo } from './model/Prestamo';
+import { PrestamoPage } from './model/PrestamoPage';
 
 @Injectable({ providedIn: 'root' })
-export class LoanService {
+export class PrestamoService {
 
-  getLoans(): Observable<LoanPage> {
+  getPrestamos(): Observable<PrestamoPage> {
     return of({
       content: [],
       pageable: { pageNumber: 0, pageSize: 10, sort: [] },
@@ -14,11 +14,11 @@ export class LoanService {
     });
   }
 
-  saveLoan(loan: Loan): Observable<Loan> {
-    return of(loan);
+  savePrestamo(prestamo: Prestamo): Observable<Prestamo> {
+    return of(prestamo);
   }
 
-  deleteLoan(id: number): Observable<void> {
+  deletePrestamo(id: number): Observable<void> {
     return of();
   }
 }
