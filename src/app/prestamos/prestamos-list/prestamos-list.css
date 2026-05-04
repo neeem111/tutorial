@@ -1,19 +1,41 @@
 .container {
-    min-width: 350px;
-    max-width: 500px;
-    padding: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
-    form {
-        display: flex;
-        flex-direction: column;
-        margin-bottom:20px;
-    }
+.filters {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
 
-    .buttons {
-        text-align: right;
+.filters form {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    flex: 1;
+}
 
-        button {
-            margin-left: 10px;
-        }
-    }
+.filters mat-form-field {
+    min-width: 180px;
+}
+
+.filters .buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-top: 4px;
+}
+
+mat-table {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
 }
