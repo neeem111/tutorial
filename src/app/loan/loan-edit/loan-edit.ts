@@ -90,18 +90,53 @@ export class LoanEdit implements OnInit {
         this.dialogRef.close();
     },
     error: (err) => {
-        const message = err?.error?.message || 'No se guardo el préstamo';
-        
+         const message = err.error?.message || err.error || 'No se pudo guardar el préstamo';
         this.snackBar.open(message, 'Cerrar', {
             duration: 5000,
             panelClass: ['error-snackbar'],
             });
+            console.log(err);
         }
         });
     }
+    /*
     private toLocalDate(date: Date | null): string | null {
     return date ? date.toISOString().split('T')[0] : null;
     }
+    */
+   /*
+   private toLocalDate(date: any): string | null {
+  if (!date) return null;
+
+  if (typeof date === 'string') {
+    return date;
+  }
+
+  if (date instanceof Date) {
+    return date.toISOString().split('T')[0];
+  }
+
+  return null;
+} */
+private toLocalDate(date: any): string | null {
+  if (!date) return null;
+
+  if (typeof date === 'string') {
+    return date;
+  }
+
+  if (date instanceof Date) {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  }
+
+  return null;
+}
+
+
     onClose() {
         this.dialogRef.close();
     }
