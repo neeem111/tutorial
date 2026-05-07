@@ -56,7 +56,6 @@ export class LoanListComponent implements OnInit {
     cliente: Cliente[] = [];
     games: Game[] = [];
 
-
     filters = {
         gameId: null,
         clientId: null,
@@ -81,7 +80,6 @@ export class LoanListComponent implements OnInit {
 
     ) {}
 
-    
     ngOnInit(): void {
     this.loadPage();
 

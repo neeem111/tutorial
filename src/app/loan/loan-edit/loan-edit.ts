@@ -8,11 +8,8 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { LoanService } from '../loan.service';
 import { Loan } from '../model/loan';
-
 import { ClientesService } from '../../clientes/clientes.service';
 import { Cliente } from '../../clientes/model/cliente';
-
-
 import { GameService } from '../../game/game.service';
 import { Game } from '../../game/model/Game';
 
@@ -43,11 +40,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatButtonModule,
         MatSnackBarModule
     ],
-    
     providers: [
-        provideNativeDateAdapter() //sirve para adaptar fechas en el picker de fechas
+        provideNativeDateAdapter()
     ],
-
     templateUrl: './loan-edit.html',
     styleUrl: './loan-edit.css',
 })
@@ -84,9 +79,6 @@ export class LoanEdit implements OnInit {
             });
 
     }
-
-
-    
     onSave() {
     const payload = {
         ...this.loan,
